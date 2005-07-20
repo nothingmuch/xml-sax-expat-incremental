@@ -17,6 +17,8 @@ WriteMakefile(
                      },
 );
 
+__END__
+# according to: https://rt.cpan.org/Ticket/Display.html?id=13764 this is broken
 
 ## add ourselves to the list of installed parsers
 sub MY::install {
