@@ -6,7 +6,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME          => 'XML::SAX::Expat::Incremental',
 	VERSION_FROM  => 'lib/XML/SAX/Expat/Incremental.pm',
-	SIGN          => 1,
+	(eval { ExtUtils::MakeMaker->VERSION("6.18") } ? (SIGN          => 1) : ()),
     AUTHOR        => 'Yuval Kogman',
     ABSTRACT      => 'Incremental/non-blocking SAX Driver for Expat',
     PREREQ_PM     => {
