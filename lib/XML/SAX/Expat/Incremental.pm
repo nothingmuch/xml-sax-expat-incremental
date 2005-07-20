@@ -7,7 +7,7 @@ use strict;
 #use warnings;
 
 use vars qw/$VERSION/;
-$VERSION = "0.03";
+$VERSION = "0.04";
 
 use XML::Parser ();
 use Carp qw/croak/;
