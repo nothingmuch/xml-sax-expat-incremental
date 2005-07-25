@@ -6,7 +6,11 @@ use warnings;
 use Test::More;
 
 BEGIN {
-	eval "use Test::Distribution not => 'description'";
-	plan skip_all => "Test::Distribution must be installed" if $@;
+	eval { require Test::Distribution };
+	if ($@){
+		plan skip_all => "Test::Distribution must be installed";
+	} else {
+		Test::Distribution->import(not => 'description');
+	}
 }
 
