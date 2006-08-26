@@ -211,6 +211,12 @@ simpler options.
 
 L<XML::Parser>, L<XML::SAX>, L<XML::SAX::Expat>, L<XML::SAX::ExpatNB>
 
+=head1 VERSION CONTROL
+
+This module is maintained using Darcs. You can get the latest version from
+L<http://nothingmuch.woobling.org/XML-SAX-Expat-Incremental/>, and use C<darcs
+send> to commit changes.
+
 =head1 AUTHOR
 
 Yuval Kogman <nothingmuch@woobling.org>
