@@ -11,6 +11,7 @@ $VERSION = "0.04";
 
 use XML::Parser ();
 use Carp qw/croak/;
+use Scalar::Util qw/weaken/;
 
 sub parse {
 	my $p = shift;
@@ -81,12 +82,14 @@ sub _create_parser { # this is defined by XML::SAX::Expat
 sub _expat_obj {
 	my $p = shift;
 	$p->{_expat_nb_obj} = shift if @_;
+	weaken($p->{_expat_nb_obj});
 	$p->{_expat_nb_obj};
 }
 
 sub _parser_obj {
 	my $p = shift;
 	$p->{_xml_parser_obj} = shift if @_;
+	weaken($p->{_xml_parser_obj}{__XSE}); # FIXME should go away
 	$p->{_xml_parser_obj};
 }
 
