@@ -16,7 +16,7 @@ use Scalar::Util qw/weaken/;
 sub parse {
 	my $p = shift;
 	my $opts = $p->get_options(@_);
-	
+
 	if ($p->{Parent}){
 		return $p->{Parent}->parse($opts);
 	} else {
@@ -38,7 +38,7 @@ sub _parse_string {
 	my $xml = shift;
 
 	$p->parse_start unless $p->{_parsing};
-	
+
 	$p->_expat_obj->parse_more($xml);
 }
 
@@ -48,7 +48,7 @@ sub parse_start {
 
 	croak "Can't parse_start - Already started"
 		if $p->{_parsing};
-	
+
 	$p->{_parsing} = 1;
 
 	$p->_really_create_parser($opt);
@@ -60,7 +60,7 @@ sub parse_done {
 
 	croak "Can't parse_done - Havn't started parsing. Call parse_start or just parse first."
 		unless $p->{_parsing};
-	
+
 	undef $p->{_parsing};
 
 	$p->_expat_obj->parse_done;
